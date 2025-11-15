@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f0f1a, #1a1a33);
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 250px;
+    background: rgba(0, 255, 255, 0.05);
+    border-right: 2px solid #00ffff;
+    box-shadow: 0 0 20px #00ffff20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .logo img {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 0 10px #00ffff);
+  }
+  
+  .logo h2 {
+    color: #00ffff;
+    margin-top: 10px;
+    text-shadow: 0 0 10px #00ffff;
+  }
+  
+  nav {
+    margin-top: 40px;
+    width: 100%;
+  }
+  
+  nav a {
+    display: block;
+    color: #ccc;
+    padding: 12px;
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: 0.3s;
+  }
+  
+  nav a:hover {
+    color: #00ffff;
+    border-left: 3px solid #00ffff;
+    background: rgba(0, 255, 255, 0.1);
+  }
+  
+  /* Contenido principal */
+  .contenido {
+    flex: 1;
+    padding: 40px;
+    animation: fadeInUp 1.2s ease;
+    overflow-y: auto;
+  }
+  
+  h1 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 20px;
+  }
+  
+  .tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid #00ffff50;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 15px #00ffff30;
+    transition: 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #00ffff80;
+  }
+  
+  .saldo {
+    background: rgba(0, 255, 255, 0.08);
+    border: 1px solid #00ffff40;
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 15px #00ffff40;
+    margin-bottom: 30px;
+  }
+  
+  .saldo h2 {
+    font-size: 2em;
+    color: #00ffff;
+  }
+  
+  .acciones button {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #00ffff;
+    color: #0f0f1a;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .acciones button:hover {
+    background: #0f0f1a;
+    color: #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+    }
+    .sidebar {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+      border-right: none;
+      border-bottom: 2px solid #00ffff;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a {
+      margin: 5px;
+      border-left: none;
+    }
+    .contenido {
+      padding: 20px;
+    }
+  }
+  
